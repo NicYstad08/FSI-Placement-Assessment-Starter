@@ -14,6 +14,12 @@ const ccMinusBtn = document.querySelector('#minus-cc')
 const sugarPlusBtn = document.querySelector('#add-sugar')
 const sugarMinusBtn = document.querySelector('#minus-sugar')
 
+const totalQty=document.getElementById('qty-total')
+function updateTotal(){
+  let total = gb+cc+sugar
+  totalQty.textContent = total
+
+  }
 credit.textContent = `Created by ${yourName}`
 
 
@@ -24,6 +30,7 @@ console.log('Gingerbread + button was clicked!')
 })
 gbPlusBtn.addEventListener('click', function () {
     gb++;
+    updateTotal()
     console.log('gb++', gb);
 // ORDER SUMMARY + 
     const gbPlusBtn = document.querySelector('#add-gb');
@@ -38,6 +45,7 @@ gbMinusBtn.addEventListener('click', function() {
     })
 gbMinusBtn.addEventListener('click', function () {
         gb--;
+        updateTotal()
         console.log('gb--', gb);
       
         const gbMinusBtn = document.querySelector('#minus-gb');
@@ -55,6 +63,7 @@ ccPlusBtn.addEventListener('click', function() {
     })
     ccPlusBtn.addEventListener('click', function () {
         cc++;
+        updateTotal()
         console.log('cc++', cc);
         
         const ccPlusBtn = document.querySelector('#add-cc');
@@ -72,6 +81,7 @@ ccPlusBtn.addEventListener('click', function () {
         })
     ccMinusBtn.addEventListener('click', function () {
             cc--;
+            updateTotal()
             console.log('cc--', cc);
 
             const ccMinusBtn = document.querySelector('#minus-cc');
@@ -88,6 +98,7 @@ sugarPlusBtn.addEventListener('click', function() {
     })
     sugarPlusBtn.addEventListener('click', function () {
         sugar++;
+        updateTotal()
         console.log('sugar++', sugar);
 
         const sugarPlusBtn = document.querySelector('#add-sugar');
@@ -105,6 +116,7 @@ sugarPlusBtn.addEventListener('click', function() {
         })
     sugarMinusBtn.addEventListener('click', function () {
             sugar--;
+            updateTotal()
             console.log('sugar--', sugar);
 
             const sugarMinusBtn = document.querySelector('#minus-sugar');
@@ -113,3 +125,6 @@ sugarPlusBtn.addEventListener('click', function() {
               sugarValue.innerText = sugar;
             });
           });
+// TOTAL----------------------------------------------------------------------------------------------------
+
+
